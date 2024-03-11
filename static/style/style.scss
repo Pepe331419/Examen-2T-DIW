@@ -1,0 +1,123 @@
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "gridAside gridMain";
+    margin: 0;
+}
+
+div#myMap {
+    height: 100vh;
+}
+
+div#marcaAgua{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    z-index: 999;
+    font-size: 0.75rem;
+    background-color: #04234c;
+    color: #fcc404;
+    padding: 5px;
+    border: solid 2px #fcc404;
+    border-radius: 10px;
+
+    *{
+        margin: 1px;
+    }
+}
+
+main {
+    grid-area: gridMain;
+}
+
+aside {
+    grid-area: gridAside;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    overflow-y: auto;
+    max-width: 20%;
+}
+
+button.hidden {
+    display: none;
+}
+
+button.masInfo {
+    display: none;
+
+    &.activated {
+        display: block;
+    }
+}
+
+aside {
+    background-color: #fcc404;
+}
+
+dialog{
+    min-width: 200px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+
+    li.titulo {
+        background-color: #fcc404;
+        color: #04234c;
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 25px;
+        position: sticky;
+        top: 0;
+    }
+
+    li.parada {
+        background-color: #04234c;
+        margin: 1px 0;
+        padding: 7px;
+        color: #fcc404;
+        font-size: 0.75rem;
+
+        div {
+            display: flex;
+            gap: 5px;
+
+            button {
+                background-color: #04234c;
+                border: solid 2px #fcc404;
+                border-radius: 15px;
+                padding: 4px 8px;
+                color: #fcc404;
+                margin-bottom: 8px;
+            }
+
+            button.masInfo {
+                display: none;
+            }
+        }
+
+        &.activated {
+            background-color: #fcc404;
+            color: #04234c;
+
+            button {
+                background-color: #fcc404;
+                border: solid 2px #04234c;
+                color: #04234c;
+            }
+
+            button.masInfo {
+                display: block;
+            }
+        }
+    }
+}
